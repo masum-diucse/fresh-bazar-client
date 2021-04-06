@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {Container} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,31 +13,45 @@ import Header from './component/Header/Header';
 import Admin from './component/Admin/Admin';
 import AddProduct from './component/AddProduct/AddProduct';
 import ManageProduct from './component/ManageProduct/ManageProduct';
+import Login from './component/Login/Login';
+import { createContext, useState } from 'react';
+import PrivateRoute from './component/PrivateRoute/PrivateRoute';
+import Checkout from './component/Checkout/Checkout';
 
-const App=()=> {
+export const UserContext = createContext();
+const App = () => {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-   <Container>
-      <Router >
-      <Header></Header>
-      <Switch>
-          <Route path="/orders">
-            <Orders />
-          </Route>
-          <Route path="/admin">
-            <Admin></Admin>
-          </Route>
-          <Route path="/addProduct">
-            <AddProduct></AddProduct>
-          </Route>
-          <Route path="/manageProduct">
-            <ManageProduct></ManageProduct>
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-    </Router>
-   </Container>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Container>
+        <Router >
+          <Header></Header>
+          <Switch>
+            <PrivateRoute path="/orders">
+              <Orders />
+            </PrivateRoute>
+            <PrivateRoute path="/admin">
+              <Admin></Admin>
+            </PrivateRoute>
+            <PrivateRoute path="/addProduct">
+              <AddProduct></AddProduct>
+            </PrivateRoute>
+            <PrivateRoute path="/manageProduct">
+              <ManageProduct></ManageProduct>
+            </PrivateRoute>
+            <PrivateRoute path="/checkout/:id">
+              <Checkout></Checkout>
+            </PrivateRoute>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </Router>
+      </Container>
+    </UserContext.Provider>
   );
 }
 

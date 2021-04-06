@@ -16,7 +16,7 @@ const ManageProduct = () => {
             <h3>Manage Product</h3>
             <hr/>
             <Row className="bg-warning p-3  ">
-                <Col cls><h6>Product Name</h6></Col>
+                <Col><h6>Product Name</h6></Col>
                 <Col><h6>Product Weight</h6></Col>
                 <Col><h6>Product Price</h6></Col>
                 <Col><h6>Action</h6></Col>

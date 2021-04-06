@@ -19,7 +19,8 @@ const Header = () => {
                     <Nav.Link><Link to="/admin" className="link-text" style={{textDecoration:'none'}}>Admin</Link></Nav.Link>             
                     <Nav.Link><Link to="/" className="link-text" style={{textDecoration:'none'}}>Deals</Link></Nav.Link>             
                     </Nav>
-                    <Button className="mr-3" variant="outline-success">Login</Button>
+                   <Link to="/login" className="link-text" style={{textDecoration:'none'}}><Button className="mr-3" variant="outline-success">Login</Button></Link>           
+                    
                 </Navbar.Collapse>
             </Navbar>
         </div>
