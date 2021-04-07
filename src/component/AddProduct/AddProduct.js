@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Col, Container, Row } from 'react-bootstrap';
 import './AddProduct.css';
+import { useHistory, useLocation } from 'react-router';
 const axios = require('axios');
 
 
 const AddProduct = () => {
     const {register,handleSubmit,formState: { errors }} = useForm();
     const [imageURL,setImageURL]=useState(null);
+    let history = useHistory();
     const handleImageUpload=(event)=>{
         console.log(event.target.files[0]);
         const imageData=new FormData();
@@ -24,8 +26,7 @@ const AddProduct = () => {
             productPrice:data.productPrice,
             productImageURL:imageURL
         };
-        // const url='https://fresh-bazar-server.herokuapp.com/addProduct';
-        const url='http://localhost:5000/addProduct'
+        const url='https://fresh-bazar-server.herokuapp.com/addProduct';
         fetch(url,{
             method:"POST",
             headers:{
@@ -33,7 +34,13 @@ const AddProduct = () => {
             },
             body:JSON.stringify(productData)
         }).then(res=>res.json())
-        .then(result=>console.log(result))
+        .then(result=>{
+            if(result){
+                alert("Product Added Successfully");
+                history.push("/admin");
+            }
+            
+        })
       };
     return (
         <form onSubmit={handleSubmit(onSubmit)}>

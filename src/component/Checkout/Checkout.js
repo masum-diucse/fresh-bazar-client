@@ -15,14 +15,14 @@ const Checkout = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [checkoutProduct, setCheckoutProduct] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/getSingleProduct/${id}`)
+        fetch(`https://fresh-bazar-server.herokuapp.com/getSingleProduct/${id}`)
             .then(res => res.json())
             .then(data => setCheckoutProduct(data));
     }, []);
     console.log(checkoutProduct[0]?.productPrice);
     const handlePlaceAnOrder=()=>{
         const orderDetails={...loggedInUser,product:checkoutProduct[0],productQuantity:1,orderTime:new Date()};
-        fetch('http://localhost:5000/addOrder',{
+        fetch('https://fresh-bazar-server.herokuapp.com/addOrder',{
         method: "POST",
         headers:{
           'Content-Type': 'application/json'

@@ -9,7 +9,7 @@ const Orders = () => {
     const [ordersProduct,setOrdersProduct]=useState([]);
     useEffect(()=>{
         const userEmail = [loggedInUser.userEmail];
-        fetch("http://localhost:5000/productByEmail",{
+        fetch("https://fresh-bazar-server.herokuapp.com/productByEmail",{
             method:"POST",
             headers: {
                 'Content-Type': 'application/json'

@@ -7,7 +7,7 @@ import './ManageProduct.css';
 const ManageProduct = () => {
     const [products,setProducts]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/getAllProduct')
+        fetch('https://fresh-bazar-server.herokuapp.com/getAllProduct')
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[])
