@@ -32,7 +32,7 @@ const Login = () => {
 const handleFacebookSignIn = () => { }
 return (
     <div className="d-flex justify-content-center align-items-center full-height">
-        <Card style={{ width: '30rem' }}  >
+        <Card style={{ width: '30rem'}}  >
             <Button onClick={handleGoogleSignIn} variant="danger" className="m-3">Google</Button>
             <Button onClick={handleFacebookSignIn} variant="primary" className="m-3">Facebook</Button>
         </Card>

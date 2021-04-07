@@ -11,7 +11,6 @@ const AddProduct = () => {
     const [imageURL,setImageURL]=useState(null);
     let history = useHistory();
     const handleImageUpload=(event)=>{
-        console.log(event.target.files[0]);
         const imageData=new FormData();
         imageData.set('key','acf4bf1ed9badbca5bd6940704c04aff');
         imageData.append('image',event.target.files[0]);

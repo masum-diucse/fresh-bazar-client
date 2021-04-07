@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div className="row d-flex justify-content-center ">
             {
-                (products.length===0)? <Loading/> : products.map(pd=><Product product={pd}></Product>)
+                (products.length===0)? <Loading/> : products.map(pd=><Product key={pd._id} product={pd}></Product>)
             }
         </div>
     );

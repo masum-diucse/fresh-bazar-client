@@ -29,13 +29,13 @@ const Orders = () => {
             <h5 className="font-weight-bold btn btn-success">{ordersProduct.length} orders have Placed</h5>
             <Container>
                 <Row className="text-center">
-                    <Col></Col>
-                    <Col><h5>Description</h5></Col>
-                    <Col><h5>Quantity</h5></Col>
-                    <Col><h5>Price</h5></Col>
+                    <Col xs={3} ></Col>
+                    <Col xs={3}><h5>Description</h5></Col>
+                    <Col xs={3}><h5>Quantity</h5></Col>
+                    <Col xs={3}><h5>Price</h5></Col>
                 </Row>
                 {
-                    ordersProduct.map(op=><SingleOrderProduct ordersProduct={op}/>)
+                    ordersProduct.map(op=><SingleOrderProduct key={op._id} ordersProduct={op}/>)
                 }
 
             </Container>

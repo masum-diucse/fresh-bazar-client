@@ -17,10 +17,10 @@ const SingleManageableProduct = ({product}) => {
     }
     return (
         <Row className="m-2">
-            <Col>{productName}</Col>
-            <Col>{productWeight}</Col>
-            <Col>{productPrice}</Col>
-            <Col>
+            <Col xs={3}>{productName}</Col>
+            <Col xs={3}>{productWeight}</Col>
+            <Col xs={3}>{productPrice}</Col>
+            <Col xs={3}>
                 <input type="image" src={deleteImage} style={{height: '30px'}} onClick={(event)=>handleDeleteProduct(event,_id)}/>
             </Col>
         </Row>

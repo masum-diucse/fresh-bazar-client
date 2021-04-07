@@ -19,7 +19,6 @@ const Checkout = () => {
             .then(res => res.json())
             .then(data => setCheckoutProduct(data));
     }, []);
-    console.log(checkoutProduct[0]?.productPrice);
     const handlePlaceAnOrder=()=>{
         const orderDetails={...loggedInUser,product:checkoutProduct[0],productQuantity:1,orderTime:new Date()};
         fetch('https://fresh-bazar-server.herokuapp.com/addOrder',{
@@ -47,7 +46,7 @@ const Checkout = () => {
                     <Col className="text-center"><h6>Price</h6></Col>
                 </Row>
                 {
-                    (checkoutProduct.length === 0) ? <Loading /> : (checkoutProduct.map(cp => <SingleCheckoutProduct cProduct={cp} />))
+                    (checkoutProduct.length === 0) ? <Loading /> : (checkoutProduct.map(cp => <SingleCheckoutProduct key={cp._id} cProduct={cp} />))
                 }
                 <hr/>
                 {

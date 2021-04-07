@@ -18,16 +18,15 @@ const SingleOrderProduct = ({ordersProduct}) => {
     
         return [day,month,year].join('-');
     }
-    console.log(formatDate(orderTime));
     return (
         <Card className=" mt-2 " border="light" style={{backgroundColor: '#e9ece1',borderRadius:'10px'}}>
         <Row className="p-2 "><Col><h6>Order Placed Date: {formatDate(orderTime)}</h6></Col></Row>
         <Row className="p-3 d-flex justify-content-center align-items-center text-center">
             
-            <Col><img src={productImageURL} style={{height:'100px'}} alt=""/></Col>
-            <Col><p>{productName}</p></Col>
-            <Col><p>{productQuantity}</p></Col>
-            <Col><p>{productPrice} TK</p></Col>
+            <Col xs={3}><img src={productImageURL} style={{height:'100px'}} alt=""/></Col>
+            <Col xs={3}><p>{productName}</p></Col>
+            <Col xs={3}><p>{productQuantity}</p></Col>
+            <Col xs={3}><p>{productPrice} TK</p></Col>
         </Row>
         </Card>
     );
