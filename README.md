@@ -13,4 +13,6 @@ Feature:
 >
 >Loading Spinner
 >
+>Make a order>
+>
 >Checkout
