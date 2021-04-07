@@ -13,6 +13,8 @@ Feature:
 >
 >Loading Spinner
 >
->Make a order>
+>Make a order
+>
+>Responsive Website
 >
 >Checkout
