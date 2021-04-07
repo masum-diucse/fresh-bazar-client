@@ -12,3 +12,5 @@ Feature:
 >Login
 >
 >Loading Spinner
+>
+>Checkout
