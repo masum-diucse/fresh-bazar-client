@@ -4,10 +4,14 @@ import { useParams } from 'react-router';
 import { UserContext } from '../../App';
 import Loading from '../Loading/Loading';
 import SingleCheckoutProduct from '../SingleCheckoutProduct/SingleCheckoutProduct';
+import { useHistory, useLocation } from 'react-router';
 import './Checkout.css';
 
 const Checkout = () => {
     const { id } = useParams();
+    let history = useHistory();
+    let location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [checkoutProduct, setCheckoutProduct] = useState([]);
     useEffect(() => {
@@ -28,7 +32,7 @@ const Checkout = () => {
       .then(result=>{
         if(result){
           alert("Order Placed Successfully");
-
+          history.replace(from);
         }
       })
     }
