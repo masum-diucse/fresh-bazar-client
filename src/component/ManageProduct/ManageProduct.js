@@ -5,6 +5,7 @@ import SingleManageableProduct from '../SingleManageableProduct/SingleManageable
 import './ManageProduct.css';
 
 const ManageProduct = () => {
+    document.title="ManageProduct";
     const [products,setProducts]=useState([]);
     useEffect(()=>{
         fetch('https://fresh-bazar-server.herokuapp.com/getAllProduct')

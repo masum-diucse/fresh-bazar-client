@@ -3,6 +3,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Admin = () => {
+    document.title="Admin";
     return (
         <Container>
             <Row className="justify-content-md-center text-center">

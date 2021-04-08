@@ -5,6 +5,7 @@ import Loading from '../Loading/Loading';
 import SingleOrderProduct from '../SingleOrderProduct/SingleOrderProduct';
 
 const Orders = () => {
+    document.title="Orders";
     const [loggedInUser, setLoggedInUser] =useContext(UserContext);
     const [ordersProduct,setOrdersProduct]=useState([]);
     useEffect(()=>{

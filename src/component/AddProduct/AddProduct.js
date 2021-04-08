@@ -7,6 +7,7 @@ const axios = require('axios');
 
 
 const AddProduct = () => {
+    document.title="AddProduct";
     const {register,handleSubmit,formState: { errors }} = useForm();
     const [imageURL,setImageURL]=useState(null);
     let history = useHistory();

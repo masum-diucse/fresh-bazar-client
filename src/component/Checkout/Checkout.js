@@ -8,6 +8,7 @@ import { useHistory, useLocation } from 'react-router';
 import './Checkout.css';
 
 const Checkout = () => {
+    document.title="Checkout";
     const { id } = useParams();
     let history = useHistory();
     let location = useLocation();
