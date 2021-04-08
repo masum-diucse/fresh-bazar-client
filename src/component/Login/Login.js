@@ -14,6 +14,7 @@ const Login = () => {
     document.title="Login";
     const [loggedInUser,setLoggedInUser]=useContext(UserContext);
     const googleProvider = new firebase.auth.GoogleAuthProvider();
+    const  facebookProvider = new firebase.auth.FacebookAuthProvider();
     let history = useHistory();
     let location = useLocation();
     let { from } = location.state || { from: { pathname: "/" } };
@@ -30,7 +31,20 @@ const Login = () => {
             });
     }
     // console.log("logged user",(loggedInUser?.userName?.length)>0);
-const handleFacebookSignIn = () => { }
+const handleFacebookSignIn = () => {
+    firebase
+  .auth()
+  .signInWithPopup(facebookProvider)
+  .then((result) => {
+    const {displayName,email}=result.user;
+                const signedInUser={userName:displayName,userEmail:email};
+                setLoggedInUser(signedInUser);
+                history.replace(from);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+ }
 return (
     <div className="d-flex justify-content-center align-items-center full-height">
         <Card style={{ width: '30rem'}}  >

@@ -22,7 +22,7 @@ const Orders = () => {
     return (
         <>
         {
-            (ordersProduct.length===0)? <Loading/> :
+           isNaN(ordersProduct.length)? <Loading/> :
             
             <Card className="p-3 mt-3">
             <h2>Your Orders</h2>
