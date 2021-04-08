@@ -17,4 +17,6 @@ Feature:
 >
 >Responsive Website
 >
+>Showing Exact webpage title
+>
 >Checkout
