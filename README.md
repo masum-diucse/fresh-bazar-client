@@ -1,3 +1,4 @@
+## Freash Bazar Website
 Complete MERN Stack responsive website for an eCommerce company that sells different types of products.
 
 >Website Link: https://fresh-bazar-client.web.app/
